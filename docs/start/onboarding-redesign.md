@@ -108,14 +108,16 @@ Design principles (decided, do not relitigate casually):
 ### Phase 5 — hatch and bootstrap (planned)
 
 - Custodian creates a nameless agent (tool call); the agent's bootstrap opens
-  with self-naming and a self-drawn avatar (image-gen ladder: model-generated
-  candidates → preset marks → keep logo). Same thread, avatar swap; the claw
-  mark stays reserved for the custodian.
+  with self-naming. PR1 keeps the ceremony to three beats and defers the
+  self-drawn avatar/image-gen ladder (model-generated candidates → preset
+  marks → keep logo) to a follow-up. Same thread, avatar swap; the claw mark
+  stays reserved for the custodian.
 - Recommendations (phase 1 service, stored scan) land as the last bootstrap
   step before the bootstrap file is removed: "minimal set or maximum
-  convenience?" Channel connect buttons carry per-channel setup playbooks; the
-  agent collects credentials conversationally and relays config writes to the
-  custodian ("asking OpenClaw…" is the canonical idiom).
+  convenience?" The bootstrap acknowledges the stored offer after the choice
+  is handled so it never asks again. Channel connect buttons carry per-channel
+  setup playbooks; the agent collects credentials conversationally and relays
+  config writes to the custodian ("asking OpenClaw…" is the canonical idiom).
 - Self-learning is asked, not announced, and doubles as skill-workshop consent;
   ClawHub is described as "scanned, signed, and verified before install" —
   nothing stronger.
