@@ -1880,13 +1880,10 @@ describe("ci workflow guards", () => {
     expect(workflow.jobs["pnpm-store-warmup"]["runs-on"]).toContain("blacksmith-4vcpu-ubuntu-2404");
   });
 
-  it("prevents parallel boundary checks from auto-installing dependencies", () => {
+  it("prevents CI jobs from auto-installing dependencies before commands", () => {
     const workflow = readCiWorkflow();
-    const boundaryStep = workflow.jobs["check-additional-shard"].steps.find(
-      (step: WorkflowStep) => step.name === "Run additional check shard",
-    );
 
-    expect(boundaryStep.env.PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN).toBe("false");
+    expect(workflow.env.PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN).toBe("false");
   });
 
   it("keeps sticky dependency snapshots on trusted Blacksmith Node shards", () => {
