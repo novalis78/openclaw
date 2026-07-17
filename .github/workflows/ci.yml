@@ -2329,6 +2329,9 @@ jobs:
           RUN_PROMPT_SNAPSHOTS: ${{ needs.preflight.outputs.run_prompt_snapshots }}
           OPENCLAW_ADDITIONAL_BOUNDARY_SHARD: ${{ matrix.boundary_shard || '' }}
           OPENCLAW_ADDITIONAL_BOUNDARY_CONCURRENCY: 4
+          # setup-node-env already validated dependencies. pnpm 11's automatic
+          # pre-run install races when these boundary commands run in parallel.
+          PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN: "false"
           # Matches the boundary lane's 32 vCPU runner (cores/2); the
           # script's default caps at 6 to protect laptops.
           OPENCLAW_EXTENSION_BOUNDARY_CONCURRENCY: 16
